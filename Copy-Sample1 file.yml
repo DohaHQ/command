@@ -1,0 +1,18 @@
+---
+- name: Update to AmzLinux nodes
+  hosts: webservers
+
+  tasks:
+  - name: Copy Sample1.txt to AmzLinux
+    ansible.builtin.copy:
+      src: /home/ec2-user/Sample1.txt
+      dest: /home/ec2-user/Sample1.txt
+
+- name: Update to Ubuntu node
+  hosts: ubuntuservers
+
+  tasks:
+  - name: Copy Sample1.txt to Ubuntu node
+    ansible.builtin.copy:
+      src:  /home/ec2-user/Sample1.txt
+      dest: /home/ubuntu/Sample1.txt
